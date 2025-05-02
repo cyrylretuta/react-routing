@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Multi-Page React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates a structured multi-page React application with routing, props usage, and lifted state between components.
 
-## Available Scripts
+## Pages / Routes
 
-In the project directory, you can run:
+The application includes the following routes:
 
-### `npm start`
+- `/` → **Home** – Displays a welcome message.
+- `/about` → **About** – Contains brief information about the app or developer.
+- `/services` → **Services** – Displays a list of services using reusable components.
+- `/contact` → **Contact** – Contains a feedback form and shows a summary of submitted data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Routing is implemented using `react-router-dom` and navigated using `<Link>` components without full page reloads.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## How Props Were Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On the **Services** page:
 
-### `npm run build`
+- A list of service items is defined in the parent component.
+- Each service is passed as props (`title` and `description`) to a child component named `ServiceCard`.
+- The list is rendered using `.map()` to display multiple instances of the `ServiceCard`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Example:
+```jsx
+<ServiceCard title="Web Design" description="Professional UI/UX" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How State Was Lifted
+On the Contact page:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The parent component (ContactPage) holds the form state using useState.
 
-### `npm run eject`
+Both the state and its update function are passed down to the ContactForm child component via props.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+On form submission, the data is updated and displayed below using the FormSummary component.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This pattern ensures shared state management between child components by "lifting" the state to the common parent.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
+React (Vite or Create React App)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React Router DOM – for routing
 
-## Learn More
+JavaScript (ES6+)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+HTML + CSS – for styling
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Features
+Client-side routing using <BrowserRouter>, <Routes>, <Route>, and <Link>
 
-### Code Splitting
+Component communication via props
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Real-time state updates and summaries using useState and state lifting
 
-### Analyzing the Bundle Size
+Reusable components for cleaner structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Live Demo
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Live Demo:(https://cyrylretuta.github.io/react-routing/).

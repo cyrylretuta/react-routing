@@ -13,8 +13,6 @@ The application includes the following routes:
 
 Routing is implemented using `react-router-dom` and navigated using `<Link>` components without full page reloads.
 
----
-
 ## How Props Were Used
 
 On the **Services** page:
@@ -26,6 +24,7 @@ On the **Services** page:
 Example:
 ```jsx
 <ServiceCard title="Web Design" description="Professional UI/UX" />
+
 
 ## How State Was Lifted
 On the Contact page:

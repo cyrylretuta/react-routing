@@ -20,12 +20,7 @@ On the **Services** page:
 - A list of service items is defined in the parent component.
 - Each service is passed as props (`title` and `description`) to a child component named `ServiceCard`.
 - The list is rendered using `.map()` to display multiple instances of the `ServiceCard`.
-
-Example:
-```jsx
-<ServiceCard title="Web Design" description="Professional UI/UX" />
-
-
+- 
 ## How State Was Lifted
 On the Contact page:
 

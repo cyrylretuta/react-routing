@@ -1,0 +1,26 @@
+.page-container {
+  margin: 20px; /* space around the container */
+  padding: 20px; /* space inside the container */
+  border-radius: 8px;
+  background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Add space between all text and elements */
+h1, h2, p {
+  margin-bottom: 15px; /* Space below the text elements */
+}
+
+/* Apply margin to buttons so they aren't too close to other elements */
+button {
+  margin-top: 20px; /* Space between the content and button */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
